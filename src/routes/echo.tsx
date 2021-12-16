@@ -3,10 +3,9 @@ import { useEffect, useState } from "preact/hooks";
 import {
   useMetaframe,
 } from "@metapages/metaframe-hook";
-import { Badge } from "@chakra-ui/react";
 import { Metaframe, MetaframeInputMap } from "@metapages/metapage";
 
-export const MetaframeOutputsRaw: FunctionalComponent = () => {
+export const Route: FunctionalComponent = () => {
   // This is currently the most performant way to get metaframe
   // inputs and cleanup properly
   const metaframeObject = useMetaframe();
@@ -20,21 +19,18 @@ export const MetaframeOutputsRaw: FunctionalComponent = () => {
     const metaframe = metaframeObject.metaframe;
     const onInputs = (newinputs: MetaframeInputMap): void => {
       setInputs(newinputs);
+      metaframe.setOutputs(newinputs)
     };
-    metaframe.addListener(Metaframe.INPUTS, onInputs);
+    const disposer = metaframe.onInputs(onInputs);
 
     return () => {
       // If the metaframe is cleaned up, also remove the inputs listener
-      metaframe.removeListener(Metaframe.INPUTS, onInputs);
+      disposer();
     };
   }, [metaframeObject.metaframe, setInputs]);
 
   return (
     <div>
-      <Badge>metaframe inputs:</Badge>{" "}
-      {inputs
-        ? JSON.stringify(inputs)
-        : "none yet"}
     </div>
   );
 };

@@ -1,9 +1,9 @@
 {
-  "name": "@metapages/metaframe-template-preact",
-  "version": "0.1.10",
+  "name": "@metapages/metaframe-echo",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/metapages/metaframe-template-preact"
+    "url": "https://github.com/metapages/metaframe-echo"
   },
   "files": [
     "dist/**/*",
@@ -12,7 +12,7 @@
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
-  "homepage": "https://github.com/metapages/metaframe-template-preact/tree/main/docs#readme",
+  "homepage": "https://github.com/metapages/metaframe-echo/tree/main/docs#readme",
   "scripts": {
     "preinstall": "npm set progress=false && npm set audit false && npm config set fund false",
     "start": "vite",
@@ -21,13 +21,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.15",
-    "@chakra-ui/react": "^1.6.5",
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
     "@metapages/metaframe-hook": "^0.6.16",
     "@metapages/metapage": "^0.8.4",
-    "framer-motion": "^4.1.17",
     "preact": "^10.5.13",
     "preact-router": "^3.2.1"
   },
