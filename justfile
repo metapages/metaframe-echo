@@ -44,6 +44,7 @@ _help:
         echo -e "    Develop URL 🔗 {{green}}https://{{APP_FQDN}}:{{APP_PORT}}/{{normal}}"
         echo -e ""
     else
+        just _mkcert;
         just _docker;
     fi
 

@@ -2,14 +2,16 @@ import { FunctionalComponent } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import {
   useMetaframe,
+  useHashParamBoolean,
 } from "@metapages/metaframe-hook";
-import { Metaframe, MetaframeInputMap } from "@metapages/metapage";
+import { MetaframeInputMap } from "@metapages/metapage";
 
 export const Route: FunctionalComponent = () => {
   // This is currently the most performant way to get metaframe
   // inputs and cleanup properly
   const metaframeObject = useMetaframe();
   const [inputs, setInputs] = useState<MetaframeInputMap | undefined>();
+  const [ debug ] = useHashParamBoolean("debug");
 
   // listen to inputs and cleanup up listener
   useEffect(() => {
@@ -18,6 +20,9 @@ export const Route: FunctionalComponent = () => {
     }
     const metaframe = metaframeObject.metaframe;
     const onInputs = (newinputs: MetaframeInputMap): void => {
+      if (debug) {
+        console.log(`${window.location.hostname} new inputs: ${JSON.stringify(newinputs).substring(0, 200)}`);
+      }
       setInputs(newinputs);
       metaframe.setOutputs(newinputs)
     };
@@ -31,6 +36,7 @@ export const Route: FunctionalComponent = () => {
 
   return (
     <div>
+      {inputs ? JSON.stringify(inputs).substring(0, 50) : "No inputs yet"}
     </div>
   );
 };
