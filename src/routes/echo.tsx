@@ -21,7 +21,7 @@ export const Route: FunctionalComponent = () => {
     const metaframe = metaframeObject.metaframe;
     const onInputs = (newinputs: MetaframeInputMap): void => {
       if (debug) {
-        console.log(`${window.location.hostname} new inputs: ${JSON.stringify(newinputs).substring(0, 200)}`);
+        console.log(`${window.location.host}${window.location.pathname} new inputs: ${JSON.stringify(newinputs).substring(0, 200)}`);
       }
       setInputs(newinputs);
       metaframe.setOutputs(newinputs)
