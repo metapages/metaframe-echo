@@ -1,9 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useState } from "preact/hooks";
-import {
-  useMetaframe,
-  useHashParamBoolean,
-} from "@metapages/metaframe-hook";
+import { useMetaframe, useHashParamBoolean } from "@metapages/metaframe-hook";
 import { MetaframeInputMap } from "@metapages/metapage";
 
 export const Route: FunctionalComponent = () => {
@@ -11,7 +8,7 @@ export const Route: FunctionalComponent = () => {
   // inputs and cleanup properly
   const metaframeObject = useMetaframe();
   const [inputs, setInputs] = useState<MetaframeInputMap | undefined>();
-  const [ debug ] = useHashParamBoolean("debug");
+  const [debug] = useHashParamBoolean("debug");
 
   // listen to inputs and cleanup up listener
   useEffect(() => {
@@ -20,11 +17,8 @@ export const Route: FunctionalComponent = () => {
     }
     const metaframe = metaframeObject.metaframe;
     const onInputs = (newinputs: MetaframeInputMap): void => {
-      if (debug) {
-        console.log(`${window.location.host}${window.location.pathname} new inputs: ${JSON.stringify(newinputs).substring(0, 200)}`);
-      }
       setInputs(newinputs);
-      metaframe.setOutputs(newinputs)
+      metaframe.setOutputs(newinputs);
     };
     const disposer = metaframe.onInputs(onInputs);
 
@@ -36,7 +30,11 @@ export const Route: FunctionalComponent = () => {
 
   return (
     <div>
-      {inputs ? JSON.stringify(inputs).substring(0, 50) : "No inputs yet"}
+      {debug
+        ? inputs
+          ? JSON.stringify(inputs)
+          : "No inputs yet"
+        : null}
     </div>
   );
 };
