@@ -30,11 +30,11 @@ export const Route: FunctionalComponent = () => {
 
   return (
     <div>
-      {debug
-        ? inputs
-          ? JSON.stringify(inputs)
-          : "No inputs yet"
-        : null}
+      <a href="https://github.com/metapages/metaframe-echo/tree/main/public">
+        Help
+      </a>
+      <br />
+      {debug ? (inputs ? JSON.stringify(inputs) : "No inputs yet") : null}
     </div>
   );
 };
