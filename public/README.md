@@ -1,25 +1,16 @@
-# This is a ready-to-fork template repository
+# [Metaframe](https://metapages.org/): echo
 
-## Features:
+This metaframe will send all inputs as outputs. Useful for measuring data flow and debugging.
 
-  - [Github Pages](https://pages.github.com/) publishing
-    - automatic versioning:
-      - `/`: latest
-      - `/v1.5.2/`: that version tag (so all published versions are available forever)
-  - [npm](https://www.npmjs.com/) module publishing
-    - automatic versioning, linked with above
-    - external package versioned with the publised website
-  - Common UI elements
-    - Help button showing the (rendered) local `./Readme.md` file
-    - Options (configurable) stored encoded in the URL hash params
-  - Metaframe outputs updated below, when connected.
-  - `just`file powered, dockerized, automated with dual human/CI controls
+## Examples
 
-## Steps:
+[👉 Basic example: inputs sent as outputs  🔗](https://app.metapages.org/#?definition=IntcbiAgXCJ2ZXJzaW9uXCI6IFwiMC4zXCIsXG4gIFwibWV0YVwiOiB7XG4gICAgXCJuYW1lXCI6IFwiU2ltcGxlIGV4YW1wbGU6IHBsb3QgcmFuZG9tIGRhdGFcIixcbiAgICBcImxheW91dHNcIjoge1xuICAgICAgXCJmbGV4Ym94Z3JpZFwiOiB7XG4gICAgICAgIFwiZG9jc1wiOiBcImh0dHA6Ly9mbGV4Ym94Z3JpZC5jb20vXCIsXG4gICAgICAgIFwibGF5b3V0XCI6IFtcbiAgICAgICAgICBbXG4gICAgICAgICAgICB7XG4gICAgICAgICAgICAgIFwibmFtZVwiOiBcInJhbmRvbVwiLFxuICAgICAgICAgICAgICBcIndpZHRoXCI6IFwiY29sLXhzLTRcIixcbiAgICAgICAgICAgICAgXCJzdHlsZVwiOiB7XG4gICAgICAgICAgICAgICAgXCJtYXhIZWlnaHRcIjogXCI2MDBweFwiLFxuICAgICAgICAgICAgICAgIFwib3ZlcmZsb3dZXCI6IFwiaGlkZGVuXCJcbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfSxcbiAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgXCJuYW1lXCI6IFwiZWNob1wiLFxuICAgICAgICAgICAgICBcIndpZHRoXCI6IFwiY29sLXhzLTRcIlxuICAgICAgICAgICAgfSxcbiAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgXCJuYW1lXCI6IFwiZGlzcGxheVwiLFxuICAgICAgICAgICAgICBcIndpZHRoXCI6IFwiY29sLXhzLTRcIlxuICAgICAgICAgICAgfVxuICAgICAgICAgIF1cbiAgICAgICAgXVxuICAgICAgfVxuICAgIH1cbiAgfSxcbiAgXCJtZXRhZnJhbWVzXCI6IHtcbiAgICBcInJhbmRvbVwiOiB7XG4gICAgICBcInVybFwiOiBcImh0dHBzOi8vbWV0YXBhZ2VzLm9yZy9tZXRhZnJhbWVzL3JhbmRvbS1kYXRhLWdlbmVyYXRvci8)
 
-  1. Fork this repo
-  2. Clone locally
-  3. Modify `package.json` fields to match your own repository e.g. change the module name
-  4. `just dev`
-       - Modify code and publish:
-       - `just publish`
+
+## Source
+
+[https://github.com/metapages/metaframe-echo](https://github.com/metapages/metaframe-echo)
+
+## Forking
+
+[https://github.com/metapages/metaframe-template-preact/blob/main/README-developer.md](https://github.com/metapages/metaframe-template-preact/blob/main/README-developer.md)
